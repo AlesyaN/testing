@@ -2,19 +2,20 @@ package ru.itis;
 
 import lombok.Data;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 
 @Data
 public class TestBase {
-    protected AppManager appManager;
+    protected static AppManager appManager;
 
     @Before
     public void initAppManager() {
-        this.appManager = new AppManager();
+        appManager = AppManager.getInstance();
     }
 
-    @After
-    public void tearDown() {
+    @AfterClass
+    public static void tearDown() {
         appManager.stop();
     }
 

@@ -14,6 +14,7 @@ import static org.junit.Assert.fail;
 
 @Data
 public class AppManager {
+    private static AppManager instance;
     private WebDriver driver;
     private String baseUrl;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -24,7 +25,7 @@ public class AppManager {
     protected AnswerHelper answerHelper;
 
 
-    public AppManager() {
+    private AppManager() {
         System.setProperty("webdriver.gecko.driver", "C:\\Uni\\Testing\\geckodriver-v0.26.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
         baseUrl = "http://localhost:8080";
@@ -33,6 +34,13 @@ public class AppManager {
         commentHelper = new CommentHelper(this);
         loginHelper = new LoginHelper(this);
         answerHelper = new AnswerHelper(this);
+    }
+
+    public static AppManager getInstance() {
+        if (instance == null) {
+            instance = new AppManager();
+        }
+        return instance;
     }
 
     public void stop() {
