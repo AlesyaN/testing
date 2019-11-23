@@ -4,6 +4,7 @@ import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.itis.helpers.AccountHelper;
+import ru.itis.helpers.AnswerHelper;
 import ru.itis.helpers.CommentHelper;
 import ru.itis.helpers.LoginHelper;
 
@@ -20,6 +21,7 @@ public class AppManager {
     protected AccountHelper accountHelper;
     protected CommentHelper commentHelper;
     protected LoginHelper loginHelper;
+    protected AnswerHelper answerHelper;
 
 
     public AppManager() {
@@ -30,6 +32,7 @@ public class AppManager {
         accountHelper = new AccountHelper(this);
         commentHelper = new CommentHelper(this);
         loginHelper = new LoginHelper(this);
+        answerHelper = new AnswerHelper(this);
     }
 
     public void stop() {
