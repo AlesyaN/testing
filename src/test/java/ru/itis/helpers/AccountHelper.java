@@ -1,14 +1,13 @@
 package ru.itis.helpers;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import ru.itis.TestBase;
+import ru.itis.AppManager;
 
 public class AccountHelper extends BaseHelper {
 
 
-    public AccountHelper(WebDriver driver) {
-        super(driver);
+    public AccountHelper(AppManager appManager) {
+        super(appManager);
     }
 
     public void testEditPageTestCase() {

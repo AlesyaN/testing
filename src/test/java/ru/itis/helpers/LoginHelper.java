@@ -1,13 +1,13 @@
 package ru.itis.helpers;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import ru.itis.AppManager;
 import ru.itis.models.Account;
 
 public class LoginHelper extends BaseHelper {
 
-    public LoginHelper(WebDriver driver) {
-        super(driver);
+    public LoginHelper(AppManager appManager) {
+        super(appManager);
     }
 
     public void testLogin(Account account) {

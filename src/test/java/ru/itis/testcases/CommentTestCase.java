@@ -10,17 +10,16 @@ public class CommentTestCase extends TestBase {
 
     @Test
     public void testComment() {
-        loginHelper.testLogin(new Account("lesya", "qwerty"));
-        commentHelper.testAddComment(new Comment());
-        loginHelper.testLogout();
+        appManager.getLoginHelper().testLogin(new Account("lesya", "qwerty"));
+        appManager.getCommentHelper().testAddComment(new Comment());
+        appManager.getLoginHelper().testLogout();
     }
     
     @Test
     public void testDeleteComment() {
-        loginHelper.testLogin(new Account("lesya", "qwerty"));
-        commentHelper.testAddComment(new Comment());
-        commentHelper.testDeleteComment();
-        loginHelper.testLogout();
+        appManager.getLoginHelper().testLogin(new Account("lesya", "qwerty"));
+        appManager.getCommentHelper().testDeleteComment();
+        appManager.getLoginHelper().testLogout();
     }
 
 

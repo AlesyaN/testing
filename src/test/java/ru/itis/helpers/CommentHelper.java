@@ -1,13 +1,13 @@
 package ru.itis.helpers;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import ru.itis.AppManager;
 import ru.itis.models.Comment;
 
 public class CommentHelper extends BaseHelper{
 
-    public CommentHelper(WebDriver driver) {
-        super(driver);
+    public CommentHelper(AppManager appManager) {
+        super(appManager);
     }
 
     public void testAddComment(Comment comment) {
@@ -23,6 +23,6 @@ public class CommentHelper extends BaseHelper{
     public void testDeleteComment() {
         driver.get("http://localhost:8080/profile/lesya");
         driver.findElement(By.id("comments-tab")).click();
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='lesya'])[10]/following::button[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/button")).click();
     }
 }
