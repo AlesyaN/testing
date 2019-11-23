@@ -11,4 +11,5 @@ public abstract class BaseHelper {
         this.appManager = appManager;
         this.driver = appManager.getDriver();
     }
+
 }

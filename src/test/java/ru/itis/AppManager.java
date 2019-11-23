@@ -3,7 +3,6 @@ package ru.itis;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.itis.helpers.AccountHelper;
 import ru.itis.helpers.AnswerHelper;
 import ru.itis.helpers.CommentHelper;
 import ru.itis.helpers.LoginHelper;
@@ -19,7 +18,6 @@ public class AppManager {
     private String baseUrl;
     private StringBuffer verificationErrors = new StringBuffer();
 
-    protected AccountHelper accountHelper;
     protected CommentHelper commentHelper;
     protected LoginHelper loginHelper;
     protected AnswerHelper answerHelper;
@@ -30,7 +28,6 @@ public class AppManager {
         driver = new FirefoxDriver();
         baseUrl = "http://localhost:8080";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        accountHelper = new AccountHelper(this);
         commentHelper = new CommentHelper(this);
         loginHelper = new LoginHelper(this);
         answerHelper = new AnswerHelper(this);

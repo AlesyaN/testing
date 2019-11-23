@@ -2,6 +2,7 @@ package ru.itis.helpers;
 
 import org.openqa.selenium.By;
 import ru.itis.AppManager;
+import ru.itis.models.Account;
 import ru.itis.models.Comment;
 
 public class CommentHelper extends BaseHelper{
@@ -24,5 +25,11 @@ public class CommentHelper extends BaseHelper{
         driver.get("http://localhost:8080/profile/lesya");
         driver.findElement(By.id("comments-tab")).click();
         driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/button")).click();
+    }
+
+    public int getCommentsNum() {
+        driver.get("http://localhost:8080/profile/lesya");
+        driver.findElement(By.id("comments-tab")).click();
+        return driver.findElements(By.cssSelector("div[id^=comment][class=list-group-item\\ flex-column\\ align-items-start]")).size();
     }
 }
