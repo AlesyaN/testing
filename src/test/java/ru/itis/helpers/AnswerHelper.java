@@ -13,7 +13,7 @@ public class AnswerHelper extends BaseHelper {
 
 
     public void editAnswer(Answer newAnswer) {
-        driver.get("http://localhost:8080/profile/lesya");
+        driver.get(appManager.getBaseUrl() + "/profile/lesya");
         driver.findElement(By.id("edit-tab")).click();
         driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[2]/div[3]/div/div/input")).click();
         driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[2]/div[3]/div/div/input")).clear();
@@ -22,7 +22,7 @@ public class AnswerHelper extends BaseHelper {
     }
 
     public String getLastAnswer() {
-        driver.get("http://localhost:8080/profile/lesya");
+        driver.get(appManager.getBaseUrl() + "/profile/lesya");
         return driver.findElement(By.cssSelector("p[id^=answer]")).getText();
     }
 }

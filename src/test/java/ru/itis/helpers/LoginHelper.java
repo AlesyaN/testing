@@ -11,7 +11,7 @@ public class LoginHelper extends BaseHelper {
     }
 
     public void testLogin(Account account) {
-        driver.get("http://localhost:8080/logout");
+        driver.get(appManager.getBaseUrl() + "/logout");
         driver.findElement(By.id("login")).click();
         driver.findElement(By.id("login")).clear();
         driver.findElement(By.id("login")).sendKeys(account.getLogin());
@@ -21,7 +21,7 @@ public class LoginHelper extends BaseHelper {
     }
 
     public void testLogout() {
-        driver.get("http://localhost:8080/logout");
+        driver.get(appManager.getBaseUrl() + "/logout");
     }
 
 }

@@ -26,7 +26,7 @@ public class AppManager {
     private AppManager() {
         System.setProperty("webdriver.gecko.driver", "C:\\Uni\\Testing\\geckodriver-v0.26.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
-        baseUrl = "http://localhost:8080";
+        baseUrl = "https://wen-wo.herokuapp.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         commentHelper = new CommentHelper(this);
         loginHelper = new LoginHelper(this);

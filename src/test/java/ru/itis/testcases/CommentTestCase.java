@@ -12,7 +12,6 @@ public class CommentTestCase extends TestBase {
     @Test
     public void testComment() {
         int commentsNumBefore = appManager.getCommentHelper().getCommentsNum();
-
         appManager.getLoginHelper().testLogin(new Account("lesya", "qwerty"));
         appManager.getCommentHelper().testAddComment(new Comment());
         appManager.getLoginHelper().testLogout();
