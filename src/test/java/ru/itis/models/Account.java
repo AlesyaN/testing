@@ -13,4 +13,11 @@ public class Account {
     private String login;
     private String password;
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

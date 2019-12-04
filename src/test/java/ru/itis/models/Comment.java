@@ -22,4 +22,11 @@ public class Comment {
     public Comment() {
         this.text = "Test comment: " + formatter.format(new Date());
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "text='" + text + '\'' +
+                '}';
+    }
 }

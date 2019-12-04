@@ -22,4 +22,11 @@ public class Answer {
     public Answer() {
         this.text = "Test answer: " + formatter.format(new Date());
     }
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "text='" + text + '\'' +
+                '}';
+    }
 }
