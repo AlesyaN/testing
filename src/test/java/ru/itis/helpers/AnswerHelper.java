@@ -11,7 +11,6 @@ public class AnswerHelper extends BaseHelper {
         super(appManager);
     }
 
-
     public void editAnswer(Answer newAnswer) {
         driver.get(appManager.getBaseUrl() + "/profile/lesya");
         driver.findElement(By.id("edit-tab")).click();

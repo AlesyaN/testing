@@ -10,7 +10,7 @@ public class LoginHelper extends BaseHelper {
         super(appManager);
     }
 
-    public void testLogin(Account account) {
+    public void login(Account account) {
         driver.get(appManager.getBaseUrl() + "/logout");
         driver.findElement(By.id("login")).click();
         driver.findElement(By.id("login")).clear();
@@ -20,8 +20,14 @@ public class LoginHelper extends BaseHelper {
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Remember me'])[1]/following::button[1]")).click();
     }
 
-    public void testLogout() {
+    public void logout() {
         driver.get(appManager.getBaseUrl() + "/logout");
+    }
+
+    public boolean isLoggedIn() {
+        driver.get(appManager.getBaseUrl() + "/profile");
+        System.out.println(driver.getCurrentUrl());
+        return !driver.getCurrentUrl().equals(appManager.getBaseUrl() + "/login");
     }
 
 }
